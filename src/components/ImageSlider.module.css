@@ -1,0 +1,54 @@
+.slider {
+  position: relative;
+  height: 100%;
+  min-height: 420px;
+  overflow: hidden;
+  background: var(--black);
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.06);
+  transition:
+    opacity 0.9s ease,
+    transform 1.6s var(--ease-out);
+}
+
+.slide img {
+  object-fit: cover;
+}
+
+.on {
+  opacity: 1;
+  transform: none;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 30%;
+  width: 84px;
+  height: 84px;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+.dots {
+  position: absolute;
+  right: 220px;
+  bottom: 44px;
+}
+
+@media (max-width: 700px) {
+  .dots {
+    right: 24px;
+  }
+}

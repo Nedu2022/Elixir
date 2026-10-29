@@ -1,0 +1,339 @@
+/* Studio intro */
+
+.intro {
+  display: grid;
+  grid-template-columns: 66.5% 33.5%;
+  border-bottom: 1px solid var(--line);
+}
+
+.introText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 28px;
+  padding: clamp(64px, 9vw, 140px) var(--pad);
+  border-right: 1px solid var(--line);
+}
+
+.introText :global(.dash) {
+  margin-bottom: 0;
+}
+
+.introText :global(.btn) {
+  margin-top: 24px;
+}
+
+.introTiles {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--line);
+}
+
+.tile:last-child {
+  border-bottom: 0;
+}
+
+.tileImg {
+  position: relative;
+  flex: 1;
+  min-height: 160px;
+  overflow: hidden;
+}
+
+.tileImg img {
+  object-fit: cover;
+  transition: transform 1.2s var(--ease-out);
+}
+
+.tile:hover .tileImg img {
+  transform: scale(1.08);
+}
+
+.tileMark {
+  position: absolute;
+  left: 48px;
+  bottom: 40px;
+  z-index: 2;
+}
+
+.tileLabel {
+  height: var(--cell);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+
+.tile:hover .tileLabel {
+  background: var(--black);
+  color: var(--white);
+}
+
+.spacerRow {
+  display: grid;
+  grid-template-columns: 33.3% 1fr;
+  height: var(--cell);
+}
+
+.spacerRow span:first-child {
+  background: var(--grey);
+  border-right: 1px solid var(--line);
+}
+
+/* Latest projects */
+
+.latest {
+  background: var(--black);
+  color: var(--white);
+  --reveal-bg: var(--black);
+}
+
+.latestHead {
+  display: grid;
+  grid-template-columns: 66.5% 1fr 1fr;
+  border-bottom: 1px solid var(--line-dark);
+}
+
+.latestText {
+  padding: clamp(64px, 8vw, 110px) var(--pad);
+  border-right: 1px solid var(--line-dark);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.latestText :global(.dash) {
+  margin-bottom: 8px;
+}
+
+.latestText p {
+  max-width: 520px;
+}
+
+.latestCell {
+  border-right: 1px solid var(--line-dark);
+}
+
+/* What we offer */
+
+.offer {
+  background: var(--white);
+}
+
+.offerHead {
+  display: grid;
+  grid-template-columns: 66.5% 33.5%;
+  border-bottom: 1px solid var(--line);
+}
+
+.offerText {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: clamp(64px, 9vw, 120px) var(--pad);
+  border-right: 1px solid var(--line);
+}
+
+.offerText :global(.dash) {
+  margin-bottom: 8px;
+}
+
+.offerText p {
+  font-size: 17px;
+  line-height: 1.75;
+  max-width: 900px;
+}
+
+.offerImg {
+  position: relative;
+  min-height: 330px;
+  overflow: hidden;
+}
+
+.offerImg img {
+  object-fit: cover;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-bottom: 1px solid var(--line);
+}
+
+.card {
+  position: relative;
+  padding: 108px var(--pad) 100px clamp(24px, 5.6vw, 108px);
+  padding-right: calc(var(--cell) + 16px);
+  border-right: 1px solid var(--line);
+}
+
+.card:last-child {
+  border-right: 0;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  border: 1px solid var(--line);
+  margin-bottom: 76px;
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+
+.card:hover .icon {
+  background: var(--black);
+  color: var(--white);
+}
+
+.card h3 {
+  margin-bottom: 36px;
+}
+
+.card p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.tags {
+  list-style: none;
+  margin: 48px 0 0;
+  padding: 44px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 36px;
+  border-top: 1px solid var(--line);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.orderRow {
+  display: grid;
+  grid-template-columns: 33.3% 1fr;
+}
+
+.orderRow span {
+  background: var(--grey);
+}
+
+/* Clients */
+
+.clients {
+  background: var(--white);
+}
+
+.banner {
+  position: relative;
+  height: clamp(420px, 38vw, 560px);
+  overflow: hidden;
+  color: var(--white);
+  background: var(--black);
+}
+
+.bannerImg {
+  object-fit: cover;
+  opacity: 0.55;
+}
+
+.bannerText {
+  position: absolute;
+  z-index: 3;
+  left: var(--pad);
+  right: 36%;
+  top: 22%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.bannerText p:last-child {
+  max-width: 560px;
+  font-size: 17px;
+}
+
+.testimonials {
+  padding: 108px 0 0 0;
+  background: linear-gradient(to right, var(--white) 66.5%, var(--grey) 66.5%) top / 100% 108px no-repeat;
+}
+
+@media (max-width: 1024px) {
+  .intro,
+  .offerHead {
+    grid-template-columns: 1fr;
+  }
+  .introText,
+  .offerText {
+    border-right: 0;
+    padding: 64px 24px;
+  }
+  .introTiles {
+    grid-template-rows: none;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid var(--line);
+  }
+  .tile:first-child {
+    border-right: 1px solid var(--line);
+  }
+  .tileImg {
+    min-height: 220px;
+  }
+  .latestHead {
+    grid-template-columns: 1fr;
+  }
+  .latestText {
+    padding: 64px 24px;
+    border-right: 0;
+  }
+  .latestCell {
+    display: none;
+  }
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .card {
+    padding: 72px 24px 64px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .icon {
+    margin-bottom: 40px;
+  }
+  .bannerText {
+    left: 24px;
+    right: 24px;
+  }
+  .testimonials {
+    padding-top: 48px;
+  }
+  .orderRow {
+    grid-template-columns: 1fr;
+  }
+  .orderRow span {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .introTiles {
+    grid-template-columns: 1fr;
+  }
+  .tile:first-child {
+    border-right: 0;
+  }
+  .spacerRow {
+    display: none;
+  }
+}

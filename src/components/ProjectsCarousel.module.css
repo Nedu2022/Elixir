@@ -1,0 +1,122 @@
+.viewport {
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  transition: transform 0.9s var(--ease);
+}
+
+.card {
+  position: relative;
+  flex: 0 0 calc(100% / var(--per));
+  height: clamp(320px, 42vw, 560px);
+  overflow: hidden;
+  color: var(--white);
+  border-right: 1px solid var(--line-dark);
+}
+
+.img {
+  object-fit: cover;
+  transition: transform 1.2s var(--ease-out);
+}
+
+.card:hover .img {
+  transform: scale(1.06);
+}
+
+.shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1) 55%, rgba(0, 0, 0, 0.25));
+}
+
+.tag {
+  position: absolute;
+  top: 60px;
+  left: 60px;
+}
+
+.info {
+  position: absolute;
+  left: 60px;
+  right: 140px;
+  bottom: 52px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2vw, 32px);
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.summary {
+  font-size: 17px;
+  opacity: 0.9;
+}
+
+.no {
+  position: absolute;
+  right: 48px;
+  bottom: 56px;
+  font-family: var(--font-display);
+  font-size: 20px;
+}
+
+.controls {
+  display: flex;
+  height: var(--cell);
+  background: var(--panel-2);
+}
+
+.dotsCell {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding-left: 110px;
+  border-left: 1px solid var(--line-dark);
+}
+
+.num {
+  background: var(--white);
+  color: var(--black);
+  border-right: 1px solid var(--line);
+}
+
+.all {
+  width: 33.5%;
+}
+
+@media (max-width: 800px) {
+  .tag {
+    top: 24px;
+    left: 24px;
+  }
+  .info {
+    left: 24px;
+    right: 80px;
+    bottom: 28px;
+  }
+  .no {
+    right: 24px;
+    bottom: 32px;
+  }
+  .dotsCell :global(.dots) {
+    display: none;
+  }
+  .num {
+    display: none;
+  }
+  .all {
+    width: auto;
+    padding: 0 24px;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+  }
+}

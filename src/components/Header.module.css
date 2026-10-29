@@ -1,0 +1,265 @@
+.header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 60;
+  height: var(--header-h);
+  display: flex;
+  align-items: stretch;
+  background: var(--black);
+  color: var(--white);
+  border-bottom: 1px solid var(--line-dark);
+}
+
+.logo {
+  flex: none;
+  width: calc(var(--side-w) + 216px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--line-dark);
+}
+
+.nav {
+  display: flex;
+  align-items: stretch;
+  gap: clamp(28px, 2.6vw, 48px);
+  padding: 0 clamp(32px, 3.8vw, 72px);
+  border-right: 1px solid var(--line-dark);
+}
+
+.nav a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.nav a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -12px;
+  right: -12px;
+  height: 4px;
+  background: var(--white);
+  transform: scaleX(0);
+  transition: transform 0.4s var(--ease);
+}
+
+.nav a:hover::before,
+.nav .active::before {
+  transform: scaleX(1);
+}
+
+.spacer {
+  flex: 1;
+  max-width: 170px;
+  border-right: 1px solid var(--line-dark);
+}
+
+.contact {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px clamp(16px, 2vw, 40px);
+  padding: 0 32px;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.contact a:hover {
+  opacity: 0.7;
+}
+
+.contact span + a {
+  margin-left: -8px;
+}
+
+.burger {
+  flex: none;
+  width: 72px;
+  position: relative;
+  margin-right: 8px;
+}
+
+.burger i {
+  position: absolute;
+  left: 18px;
+  width: 36px;
+  height: 1px;
+  background: currentColor;
+  top: 50%;
+  transition:
+    transform 0.4s var(--ease),
+    opacity 0.3s;
+}
+
+.burger i:last-child {
+  opacity: 0;
+}
+
+.burger:hover i:first-child {
+  transform: translateY(-4px);
+}
+
+.burger:hover i:last-child {
+  opacity: 1;
+  transform: translateY(4px);
+}
+
+.burgerOpen i:first-child,
+.burgerOpen:hover i:first-child {
+  transform: rotate(45deg);
+}
+
+.burgerOpen i:last-child,
+.burgerOpen:hover i:last-child {
+  opacity: 1;
+  transform: rotate(-45deg);
+}
+
+/* Overlay menu */
+
+.menu {
+  position: fixed;
+  inset: var(--header-h) 0 0 0;
+  z-index: 55;
+  background: var(--black);
+  color: var(--white);
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 0.8s var(--ease);
+  overflow-y: auto;
+}
+
+.menuOpen {
+  clip-path: inset(0 0 0 0);
+}
+
+.menuNav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px var(--pad);
+  border-right: 1px solid var(--line-dark);
+}
+
+.menuNav a {
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+  padding: 10px 0;
+  overflow: hidden;
+}
+
+.menuNav small {
+  font-weight: 700;
+  font-size: 13px;
+  opacity: 0.5;
+}
+
+.menuNav span {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 5vw, 72px);
+  text-transform: uppercase;
+  line-height: 1.15;
+  transform: translateY(110%);
+  transition:
+    transform 0.8s var(--ease-out),
+    opacity 0.3s;
+}
+
+.menuOpen .menuNav span {
+  transform: none;
+  transition-delay: calc(0.3s + var(--i) * 0.06s), 0s;
+}
+
+.menuNav a:hover span,
+.menuActive span {
+  -webkit-text-stroke: 1px var(--white);
+  color: transparent;
+}
+
+.menuInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+  padding: 48px var(--pad);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.menuInfo span {
+  display: inline-block;
+  min-width: 110px;
+  opacity: 0.55;
+}
+
+.menuSocials {
+  display: flex;
+  gap: 28px;
+  margin-top: 24px;
+}
+
+@media (max-width: 1700px) {
+  .spacer {
+    display: none;
+  }
+}
+
+@media (max-width: 1500px) {
+  .contact span {
+    display: none;
+  }
+  .contact span + a {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 1300px) {
+  .contact a:first-of-type {
+    display: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  .contact {
+    display: none;
+  }
+  .nav {
+    flex: 1;
+    border-right: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .logo {
+    width: auto;
+    padding: 0 24px;
+    border-right: 0;
+  }
+  .nav {
+    display: none;
+  }
+  .header {
+    justify-content: space-between;
+  }
+  .menu {
+    grid-template-columns: 1fr;
+  }
+  .menuNav {
+    border-right: 0;
+    border-bottom: 1px solid var(--line-dark);
+  }
+}

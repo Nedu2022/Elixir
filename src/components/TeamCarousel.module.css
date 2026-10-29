@@ -1,0 +1,118 @@
+.viewport {
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  transition: transform 0.9s var(--ease);
+}
+
+.slot {
+  flex: 0 0 calc(100% / var(--per));
+  padding: 60px;
+  border-right: 1px solid var(--line);
+}
+
+.card {
+  border: 1px solid var(--line);
+}
+
+.photo {
+  position: relative;
+  aspect-ratio: 500 / 655;
+  overflow: hidden;
+  background: var(--grey);
+}
+
+.photo img {
+  object-fit: cover;
+  transition: transform 1.2s var(--ease-out);
+}
+
+.card:hover .photo img {
+  transform: scale(1.05);
+}
+
+.bio {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 24px 28px;
+  background: rgba(0, 0, 0, 0.75);
+  color: var(--white);
+  font-size: 15px;
+  line-height: 1.6;
+  transform: translateY(100%);
+  transition: transform 0.6s var(--ease-out);
+}
+
+.card:hover .bio {
+  transform: none;
+}
+
+.meta {
+  padding: 34px 20px 30px;
+  text-align: center;
+}
+
+.meta h3 {
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+
+.meta p {
+  font-family: var(--font-display);
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.controls {
+  display: flex;
+  height: var(--cell);
+  border-top: 1px solid var(--line);
+}
+
+.arrow {
+  width: var(--cell);
+  display: grid;
+  place-items: center;
+  border-right: 1px solid var(--line);
+  transition: background 0.3s, color 0.3s;
+}
+
+.arrow:last-child {
+  border-right: 0;
+  border-left: 1px solid var(--line);
+  background: var(--grey);
+}
+
+.arrow:hover {
+  background: var(--black);
+  color: var(--white);
+}
+
+.filler {
+  flex: 1;
+}
+
+.dotsCell {
+  width: 340px;
+  display: grid;
+  place-items: center;
+  border-left: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+}
+
+@media (max-width: 700px) {
+  .slot {
+    padding: 24px;
+    border-right: 0;
+  }
+  .dotsCell {
+    width: auto;
+    flex: 1;
+  }
+  .filler {
+    display: none;
+  }
+}

@@ -1,0 +1,101 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--line);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--line);
+}
+
+.field input,
+.field textarea {
+  font: inherit;
+  font-size: 15px;
+  color: var(--text);
+  background: transparent;
+  border: 0;
+  padding: 0 58px;
+  height: 95px;
+  outline: none;
+  transition: background 0.3s;
+}
+
+.field textarea {
+  height: 230px;
+  padding-top: 40px;
+  resize: vertical;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #888;
+}
+
+.field input:focus,
+.field textarea:focus {
+  background: var(--grey);
+}
+
+.field em {
+  padding: 0 58px 14px;
+  font-style: normal;
+  font-size: 13px;
+  color: #b4472f;
+}
+
+.invalid input::placeholder,
+.invalid textarea::placeholder {
+  color: #b4472f;
+}
+
+.hp {
+  position: absolute;
+  left: -9999px;
+}
+
+.formError {
+  padding: 16px 58px;
+  font-size: 14px;
+  color: #b4472f;
+}
+
+.send {
+  width: 100%;
+  height: var(--cell);
+  font-size: 15px;
+  letter-spacing: 0.04em;
+}
+
+.send:disabled {
+  opacity: 0.7;
+  cursor: progress;
+}
+
+.success {
+  padding: 58px;
+  border-top: 1px solid var(--line);
+  font-size: 17px;
+}
+
+.successTitle {
+  font-family: var(--font-display);
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 760px) {
+  .field input,
+  .field textarea,
+  .field em,
+  .formError {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .success {
+    padding: 32px 24px;
+  }
+}

@@ -1,0 +1,162 @@
+.spacer {
+  display: grid;
+  grid-template-columns: 66.5% 1fr;
+  height: var(--cell);
+  border-bottom: 1px solid var(--line);
+}
+
+.spacer span:first-child {
+  background: var(--grey);
+  border-right: 1px solid var(--line);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 66.5% 33.5%;
+}
+
+.left {
+  border-right: 1px solid var(--line);
+  min-width: 0;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-bottom: 1px solid var(--line);
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 64px 32px 72px 48px;
+  border-right: 1px solid var(--line);
+}
+
+.card:last-child {
+  border-right: 0;
+}
+
+.corner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  border-left: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.no {
+  font-size: 22px;
+  margin-bottom: 26px;
+}
+
+.label {
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+.value {
+  font-weight: 700;
+  font-size: clamp(15px, 1.25vw, 19px);
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+a.value:hover {
+  opacity: 0.65;
+}
+
+.socials {
+  display: grid;
+  grid-template-columns: 0.75fr repeat(4, 1fr) 0.75fr;
+  height: var(--cell);
+  border-top: 1px solid var(--line);
+}
+
+.socials > * {
+  display: grid;
+  place-items: center;
+  border-right: 1px solid var(--line);
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.socials > :last-child {
+  border-right: 0;
+}
+
+.socials a {
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+
+.socials a:hover {
+  background: var(--black);
+  color: var(--white);
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 72px 58px 72px;
+}
+
+.intro p {
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+@media (max-width: 1100px) {
+  .grid,
+  .spacer {
+    grid-template-columns: 1fr;
+  }
+  .spacer span:last-child {
+    display: none;
+  }
+  .left {
+    border-right: 0;
+  }
+  .right {
+    border-top: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 760px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .card {
+    padding: 40px 24px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .socials {
+    grid-template-columns: 1fr 1fr;
+    height: auto;
+  }
+  .socials > span {
+    display: none;
+  }
+  .socials > a {
+    height: 64px;
+    border-bottom: 1px solid var(--line);
+  }
+  .intro {
+    padding: 48px 24px;
+  }
+}

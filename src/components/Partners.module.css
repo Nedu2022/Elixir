@@ -1,0 +1,55 @@
+.strip {
+  display: flex;
+  border-bottom: 1px solid var(--line);
+}
+
+.strip :global(.sq) {
+  height: auto;
+  border-left: 1px solid var(--line);
+}
+
+.viewport {
+  flex: 1;
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  transition: transform 0.8s var(--ease);
+}
+
+.logo {
+  flex: 0 0 calc(100% / var(--per));
+  height: 214px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: var(--grey);
+  border-right: 1px solid var(--line);
+  color: #222;
+  filter: grayscale(1);
+  opacity: 0.85;
+  transition: opacity 0.3s;
+}
+
+.logo:hover {
+  opacity: 1;
+}
+
+.logo span {
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 700px) {
+  .logo {
+    height: 140px;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .logo span {
+    font-size: 15px;
+  }
+}

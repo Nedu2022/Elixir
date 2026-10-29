@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Elxir — Architecture & Interiors website
 
-## Getting Started
+Next.js 16 (App Router, Cache Components) site using the Ecrait template's layout as a
+design reference: black framed grid with fixed top bar and social side rail, full-bleed
+hero slider with bottom control strip, project / testimonial / team / partner carousels,
+full-screen portfolio mosaic with filter bar, project pages with lightbox, project search,
+newsletter signup and animated page transitions. All code is original; no template
+assets are used.
 
-First, run the development server:
+## Run
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build && npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Where things live
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| What | Where |
+| --- | --- |
+| All copy, projects, services, team, contact details | `src/lib/site.ts` |
+| Colours, fonts, spacing, animations | `src/app/globals.css` (`:root` tokens) |
+| Pages | `src/app/` — `/`, `/projects`, `/projects/[slug]`, `/about`, `/services`, `/contact` |
+| Components | `src/components/` |
+| Contact form handler | `src/app/contact/actions.ts` (validation done; wire up email delivery at the TODO) |
+| Newsletter handler | `src/app/actions.ts` (wire up your mailing list at the TODO) |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Before launch
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Replace the Unsplash placeholder photos in `public/images/` with your own.
+- Replace placeholder team portraits in `public/images/team/` and partner names in `site.ts`.
+- Connect the contact form to an email service or CRM.
+- Update the map embed on `/contact` to your real address.

@@ -1,0 +1,105 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(16px, 2vw, 32px);
+}
+
+.item {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  cursor: zoom-in;
+  background: var(--grey);
+}
+
+.item:nth-child(3n + 1) {
+  grid-column: span 2;
+  aspect-ratio: 16 / 8;
+}
+
+.img {
+  object-fit: cover;
+  transition: transform 1.2s var(--ease-out);
+}
+
+.item:hover .img {
+  transform: scale(1.04);
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  animation: fade 0.4s ease both;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.96);
+  cursor: zoom-out;
+}
+
+.stage {
+  position: relative;
+  margin: clamp(24px, 5vw, 64px);
+  animation: zoom 0.6s var(--ease-out) both;
+  pointer-events: none;
+}
+
+.full {
+  object-fit: contain;
+}
+
+.bar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--pad) 28px;
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.nav {
+  display: flex;
+  gap: 28px;
+}
+
+.nav button {
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.nav button:hover {
+  opacity: 1;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes zoom {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+}
+
+@media (max-width: 680px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .item:nth-child(3n + 1) {
+    grid-column: auto;
+    aspect-ratio: 4 / 3;
+  }
+}
