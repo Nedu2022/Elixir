@@ -34,9 +34,6 @@ export default function PageBanner({
       </div>
       <a href="#content" className={styles.explore}>
         <span>Start explore</span>
-        <span className={styles.mouse} aria-hidden="true">
-          <i />
-        </span>
       </a>
     </section>
   );

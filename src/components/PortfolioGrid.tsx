@@ -38,9 +38,6 @@ export default function PortfolioGrid({ projects }: { projects: Project[] }) {
       </div>
 
       <div className={styles.bar}>
-        <span className={styles.mouseCell} aria-hidden="true">
-          <i />
-        </span>
         <div className={styles.filters} role="tablist" aria-label="Filter projects">
           {(["All", ...categories] as const).map((c) => (
             <button

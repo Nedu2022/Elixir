@@ -98,19 +98,6 @@
   border-top: 1px solid var(--line);
 }
 
-.mouseCell {
-  width: var(--cell);
-  display: grid;
-  place-items: center;
-  border-right: 1px solid var(--line);
-}
-
-.mouseCell i {
-  width: 22px;
-  height: 36px;
-  border: 1px solid #bbb;
-  border-radius: 8px;
-}
 
 .filters {
   flex: 1;
@@ -205,7 +192,6 @@
   .item:nth-child(3n + 1) {
     grid-column: auto !important;
   }
-  .mouseCell,
   .count:last-child {
     display: none;
   }

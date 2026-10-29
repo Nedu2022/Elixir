@@ -246,43 +246,7 @@
 }
 
 .explore > span:first-child {
-  padding-left: 58px;
-}
-
-.mouse {
-  width: var(--cell);
-  height: 100%;
-  display: grid;
-  place-items: center;
-  border-left: 1px solid var(--line);
-}
-
-.mouse i {
-  width: 22px;
-  height: 36px;
-  border: 1px solid #bbb;
-  border-radius: 8px;
-  position: relative;
-}
-
-.mouse i::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 6px;
-  width: 3px;
-  height: 3px;
-  margin-left: -1.5px;
-  border-radius: 50%;
-  background: var(--black);
-  animation: wheel 1.6s ease-in-out infinite;
-}
-
-@keyframes wheel {
-  to {
-    transform: translateY(14px);
-    opacity: 0;
-  }
+  padding: 0 58px;
 }
 
 @media (max-width: 1024px) {
@@ -310,11 +274,8 @@
   .search,
   .peek,
   .progress,
-  .explore > span:first-child {
-    display: none;
-  }
   .explore {
-    width: auto;
+    display: none;
   }
   .barMain {
     padding-left: 18px;

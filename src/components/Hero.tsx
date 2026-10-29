@@ -127,9 +127,6 @@ export default function Hero({ projects, intro }: { projects: Project[]; intro: 
         <span className={`cell ${styles.count}`}>{pad(total)}</span>
         <a href="#explore" className={styles.explore}>
           <span>Start explore</span>
-          <span className={styles.mouse} aria-hidden="true">
-            <i />
-          </span>
         </a>
       </div>
     </section>

@@ -227,13 +227,13 @@
   }
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1600px) {
   .contact a:first-of-type {
     display: none;
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1320px) {
   .contact {
     display: none;
   }

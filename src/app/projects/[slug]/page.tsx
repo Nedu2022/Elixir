@@ -55,9 +55,6 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
         </div>
         <a href="#content" className={banner.explore}>
           <span>Start explore</span>
-          <span className={banner.mouse} aria-hidden="true">
-            <i />
-          </span>
         </a>
       </section>
 
