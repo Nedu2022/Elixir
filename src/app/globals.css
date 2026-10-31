@@ -13,9 +13,9 @@
   --font-display: var(--font-michroma), "Arial Black", sans-serif;
   --font-sans: var(--font-saira), system-ui, sans-serif;
 
-  --header-h: 100px;
-  --side-w: 106px;
-  --cell: 107px;
+  --header-h: clamp(72px, 5.2vw, 100px);
+  --side-w: clamp(72px, 5.5vw, 106px);
+  --cell: clamp(72px, 5.6vw, 107px);
   --pad: clamp(24px, 6vw, 108px);
   --ease: cubic-bezier(0.77, 0, 0.175, 1);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
